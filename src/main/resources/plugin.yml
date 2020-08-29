@@ -14,6 +14,9 @@ commands:
   night:
     description: Night command.
     permission: poweressentials.timechange
+  info:
+    description: Info command.
+    permission: poweressentials.serverinfo
   gm:
     description: Gamemode command.
     aliases:
@@ -51,6 +54,12 @@ permissions:
   poweressentials.broadcast:
     description: "Allows the user to run the /broadcast command"
     default: op
+  poweressentials.firework:
+    description: "Fireworks!!"
+    default: op
   poweressentials.timechange:
     description: "Allows the user to run a day change command"
+    default: op
+  poweressentials.serverinfo:
+    description: "Allows the user to get the Server and PowerEssentials infomation."
     default: op
