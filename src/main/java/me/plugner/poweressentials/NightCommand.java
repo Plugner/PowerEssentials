@@ -26,7 +26,7 @@ public class NightCommand implements CommandExecutor {
                 sender.sendMessage(TextFormat.DARK_RED + "Unknown level "+TextFormat.RED+" (" + args[0].toLowerCase() + ").");
                 return false;
             }
-            level.setTime(1600);
+            level.setTime(16000);
             sender.sendMessage(TextFormat.GOLD + "Defined " + TextFormat.RED + "night " + TextFormat.GOLD + "in world " + TextFormat.RED + level.getName() + TextFormat.GOLD + ".");
         }
         return false;
