@@ -13,6 +13,17 @@ commands:
     aliases:
       - gamemode
     permission: poweressentials.gamemode
+  bc:
+    description: Broadcast command.
+    aliases:
+      - broadcast
+      - say2all
+      - saytoall
+      - saytoeveryone
+      - alert
+      - announce
+      - announcement
+    permission: poweressentials.gamemode
   tp:
     description: Teleport command.
     aliases:
@@ -30,4 +41,7 @@ permissions:
     default: op
   poweressentials.tp:
     description: "Allows the user to run the /tp command"
+    default: op
+  poweressentials.broadcast:
+    description: "Allows the user to run the /broadcast command"
     default: op
