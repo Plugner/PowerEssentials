@@ -1,6 +1,7 @@
 package me.plugner.poweressentials;
 
 import cn.nukkit.Player;
+import cn.nukkit.Server;
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandExecutor;
 import cn.nukkit.command.CommandSender;
@@ -40,14 +41,14 @@ public class GamemodeCommand implements CommandExecutor {
         if(args.length == 0) {commandSender.sendMessage(USAGE_MESSAGE);return false;}
         if(args.length == 1) {
             if(!(commandSender instanceof Player)) {
-                commandSender.sendMessage("§4Only players can execute this action.");
+                commandSender.sendMessage(TextFormat.DARK_RED + "Only players can execute this action.");
                 return false;
             }
             Player p = (Player)commandSender;
             String argument = args[0].toLowerCase();
 
             if(!GAMEMODES.containsKey(argument)) {
-                p.sendMessage("§4Unknown gamemode §6(" + argument + ")");
+                p.sendMessage(TextFormat.DARK_RED + "Unknown gamemode "+TextFormat.RED+" (" + argument + ")");
                 return false;
             }
 
@@ -55,9 +56,31 @@ public class GamemodeCommand implements CommandExecutor {
             String gamemodeName = GAMEMODE_NAME.get(gamemode);
 
             p.setGamemode(gamemode);
-            p.sendMessage("§6Your gamemode has been changed to §c" + gamemodeName + "§6 mode.");
+            p.sendMessage(TextFormat.GOLD + "Your gamemode has been changed to " + TextFormat.RED + gamemodeName + TextFormat.GOLD + " mode.");
 
         }
+       if(args.length == 2) {
+           String arg1 = args[0];
+           if(!GAMEMODES.containsKey(arg1)) {
+               commandSender.sendMessage(TextFormat.DARK_RED + "Unknown gamemode "+TextFormat.RED+" (" + arg1.toLowerCase() + ")");
+               return false;
+           }
+           String targetStr = args[1];
+           Player t = Server.getInstance().getPlayer(targetStr);
+           if(t == null) {
+               commandSender.sendMessage(TextFormat.DARK_RED + "Unknown player "+TextFormat.RED+" (" + targetStr.toLowerCase() + ")");
+               return false;
+           }
+
+           int gamemode = GAMEMODES.get(arg1);
+           String gamemodeName = GAMEMODE_NAME.get(gamemode);
+
+
+
+           t.setGamemode(gamemode);
+           t.sendMessage(TextFormat.GOLD + "Your gamemode has been changed to " + TextFormat.RED + gamemodeName + TextFormat.GOLD + " mode.");
+           commandSender.sendMessage(TextFormat.GOLD + "The gamemode of the player " + t.getName() + " was changed to " + TextFormat.RED + gamemodeName.toLowerCase() + TextFormat.GOLD + " successfully.");
+       }
         return true;
     }
 }
