@@ -8,6 +8,12 @@ description: Essentials Commands plugin to PowerNukkit
 website: https://github.com/Plugner/PowerEssentials
 
 commands:
+  day:
+    description: Day command.
+    permission: poweressentials.timechange
+  night:
+    description: Night command.
+    permission: poweressentials.timechange
   gm:
     description: Gamemode command.
     aliases:
@@ -44,4 +50,7 @@ permissions:
     default: op
   poweressentials.broadcast:
     description: "Allows the user to run the /broadcast command"
+    default: op
+  poweressentials.timechange:
+    description: "Allows the user to run a day change command"
     default: op
