@@ -10,11 +10,11 @@ public class PowerEssentials extends PluginBase {
     public void onEnable() {
         getLogger().info("Started PowerEssentials Version 1.0.0-SNAPSHOT");
         ((PluginCommand<?>) getCommand("gm")).setExecutor(new GamemodeCommand());
-        
+        ((PluginCommand<?>) getCommand("tp")).setExecutor(new TeleportCommand());
         // You must register your listeners to capture events
         // You can make this class implement the Listener itself and invoke registerEvents(this, this)
         // But again, if the listener gets too complicated it might be better to group them in different classes
-        getServer().getPluginManager().registerEvents(new CloneListener(), this);
+        // getServer().getPluginManager().registerEvents(new CloneListener(), this);
     }
 
     @Override

@@ -13,18 +13,21 @@ commands:
     aliases:
       - gamemode
     permission: poweressentials.gamemode
+  tp:
+    description: Teleport command.
+    aliases:
+      - teleport
+      - tele
+      - teleportation
+      - teleport2
+      - teleportto
+      - goto
+    permission: poweressentials.tp
 
 permissions:
   poweressentials.gamemode:
     description: "Allows the user to run the /gm command"
-    # Optional
-    # If a player don't have an allow-deny definition for this key, this default value will be used
-    # Valid options: 
-    # - true: the permission is granted by default to everybody
-    # - false: the permission is revoked by default to everybody, including admins and OP
-    # - op: the permission is revoked by default to everybody, but is granted to OP players
-    # - notop: the permission is granted by default to everybody, but is revoked to OP players
-    # Default value is false
     default: op
-    
-# TODO Add all possible configuration here
+  poweressentials.tp:
+    description: "Allows the user to run the /tp command"
+    default: op
