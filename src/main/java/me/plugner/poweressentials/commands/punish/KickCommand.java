@@ -14,10 +14,12 @@ public class KickCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(args.length == 0) {
             sender.sendMessage(USAGE_MESSAGE);
+
             return false;
         }
         if(args.length == 1) {
             Player t = Server.getInstance().getPlayer(args[0]);
+            
             if(t == null) {
                 sender.sendMessage(TextFormat.DARK_RED + "Unknown player "+TextFormat.RED+" (" + args[0].toLowerCase() + ")");
                 return false;
