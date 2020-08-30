@@ -17,11 +17,27 @@ commands:
   info:
     description: Info command.
     permission: poweressentials.serverinfo
+  fly:
+    description: Fly command.
+    permission: poweressentials.fly
+    aliases:
+      - flyingmode
+      - ibelieveicanfly
   gm:
     description: Gamemode command.
     aliases:
       - gamemode
     permission: poweressentials.gamemode
+  invsee:
+    description: Invsee command.
+    aliases:
+      - inv
+      - lookinv
+      - lookattheinventory
+      - inventory
+      - showinv
+      - invofaplayer
+    permission: poweressentials.invsee
   bc:
     description: Broadcast command.
     aliases:
@@ -62,4 +78,10 @@ permissions:
     default: op
   poweressentials.serverinfo:
     description: "Allows the user to get the Server and PowerEssentials infomation."
+    default: op
+  poweressentials.invsee:
+    description: "Allows the user to look other players inventory."
+    default: op
+  poweressentials.fly:
+    description: "Allows the user to fly using /fly command."
     default: op
