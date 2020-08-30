@@ -18,7 +18,7 @@ public class PowerEssentials extends PluginBase {
     public void onEnable() {
         String[] NukkitVersion = Nukkit.VERSION.replace("-PN", "").split(".");
         // 1.3.1.4-PN
-        //if(Integer.parseInt(NukkitVersion[3]) < 4 && Integer.parseInt(NukkitVersion[2]) <= 1) {
+        if(Integer.parseInt(NukkitVersion[3]) < 4 && Integer.parseInt(NukkitVersion[2]) <= 1) {
          getLogger().warning("-------------------------------------");
          getLogger().warning("PowerEssentials WARNING");
          getLogger().warning("You are using a outdated version.");
@@ -26,7 +26,7 @@ public class PowerEssentials extends PluginBase {
          getLogger().warning("Supported version: 1.3.1.4-PN");
          getLogger().warning("Crashes may happens, you have been warned.");
          getLogger().warning("-------------------------------------");
-        //}
+        }
 
         getLogger().info("Started PowerEssentials Version " + VERSION);
         ((PluginCommand<?>) getCommand("gm")).setExecutor(new me.plugner.poweressentials.GamemodeCommand());
