@@ -18,12 +18,13 @@ public class PowerEssentials extends PluginBase {
     public void onEnable() {
         String[] NukkitVersion = Nukkit.VERSION.replace("-PN", "").split(".");
         // 1.3.1.4-PN
-        if(Integer.parseInt(NukkitVersion[3]) < 4 && Integer.parseInt(NukkitVersion[2]) <= 1) {
+
+        if(!Nukkit.API_VERSION.equals("1.0.11")) {
          getLogger().warning("-------------------------------------");
          getLogger().warning("PowerEssentials WARNING");
          getLogger().warning("You are using a outdated version.");
-         getLogger().warning("Your server version: " + Nukkit.VERSION);
-         getLogger().warning("Supported version: 1.3.1.4-PN");
+         getLogger().warning("Your server api-version: " + Nukkit.API_VERSION);
+         getLogger().warning("Supported api-version: 1.0.11");
          getLogger().warning("Crashes may happens, you have been warned.");
          getLogger().warning("-------------------------------------");
         }
