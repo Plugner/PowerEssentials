@@ -1,5 +1,6 @@
 package me.plugner.poweressentials;
 
+import cn.nukkit.Nukkit;
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
@@ -12,10 +13,22 @@ import me.plugner.poweressentials.commands.punish.UnbanCommand;
 import me.plugner.poweressentials.commands.randomic.RandomNumberCommand;
 
 public class PowerEssentials extends PluginBase {
-    public static final String VERSION = "1.0.0-SNAPSHOT";
+    public static final String VERSION = "1.0.0";
     @Override
     public void onEnable() {
-        getLogger().info("Started PowerEssentials Version 1.0.0-SNAPSHOT");
+        String[] NukkitVersion = Nukkit.VERSION.replace("-PN", "").split(".");
+        // 1.3.1.4-PN
+        //if(Integer.parseInt(NukkitVersion[3]) < 4 && Integer.parseInt(NukkitVersion[2]) <= 1) {
+         getLogger().warning("-------------------------------------");
+         getLogger().warning("PowerEssentials WARNING");
+         getLogger().warning("You are using a outdated version.");
+         getLogger().warning("Your server version: " + Nukkit.VERSION);
+         getLogger().warning("Supported version: 1.3.1.4-PN");
+         getLogger().warning("Crashes may happens, you have been warned.");
+         getLogger().warning("-------------------------------------");
+        //}
+
+        getLogger().info("Started PowerEssentials Version " + VERSION);
         ((PluginCommand<?>) getCommand("gm")).setExecutor(new me.plugner.poweressentials.GamemodeCommand());
         ((PluginCommand<?>) getCommand("tp")).setExecutor(new me.plugner.poweressentials.TeleportCommand());
         ((PluginCommand<?>) getCommand("bc")).setExecutor(new me.plugner.poweressentials.BroadcastCommand());
