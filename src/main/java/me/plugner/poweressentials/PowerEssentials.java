@@ -5,6 +5,9 @@ import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.plugin.PluginBase;
 import me.plugner.poweressentials.commands.*;
+import me.plugner.poweressentials.commands.punish.BanCommand;
+import me.plugner.poweressentials.commands.punish.KickCommand;
+import me.plugner.poweressentials.commands.punish.UnbanCommand;
 
 public class PowerEssentials extends PluginBase {
     public static final String VERSION = "1.0.0-SNAPSHOT";
@@ -23,6 +26,10 @@ public class PowerEssentials extends PluginBase {
 
         ((PluginCommand<?>) getCommand("fly")).setExecutor(new FlyCommand());
         ((PluginCommand<?>) getCommand("heal")).setExecutor(new HealCommand());
+
+        ((PluginCommand<?>) getCommand("ban")).setExecutor(new BanCommand());
+        ((PluginCommand<?>) getCommand("unban")).setExecutor(new UnbanCommand());
+        ((PluginCommand<?>) getCommand("kick")).setExecutor(new KickCommand());
         // You must register your listeners to capture events
         // You can make this class implement the Listener itself and invoke registerEvents(this, this)
         // But again, if the listener gets too complicated it might be better to group them in different classes

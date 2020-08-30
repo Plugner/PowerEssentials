@@ -17,6 +17,17 @@ commands:
   info:
     description: Info command.
     permission: poweressentials.serverinfo
+  ban:
+    description: Ban command.
+    permission: poweressentials.ban
+  kick:
+    description: Kick command.
+    permission: poweressentials.kick
+  unban:
+    description: Unban command.
+    permission: poweressentials.ban
+    aliases:
+      - pardon
   fly:
     description: Fly command.
     permission: poweressentials.fly
@@ -93,4 +104,10 @@ permissions:
     default: op
   poweressentials.heal:
     description: "Allows to heal a user using /heal command."
+    default: op
+  poweressentials.ban:
+    description: "Allows to ban and unban."
+    default: op
+  poweressentials.kick:
+    description: "Allows to kick."
     default: op
