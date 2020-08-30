@@ -1,6 +1,6 @@
 name: PowerEssentials
 main: me.plugner.poweressentials.PowerEssentials
-version: "1.0.0"
+version: "1.0.1-SNAPSHOT"
 api: ["1.0.0"]
 load: POSTWORLD
 author: Plugner

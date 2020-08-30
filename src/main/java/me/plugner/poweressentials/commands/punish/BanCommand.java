@@ -19,7 +19,7 @@ public class BanCommand implements CommandExecutor {
             return false;
         }
         if(args.length == 1) {
-            OfflinePlayer t = (OfflinePlayer) Server.getInstance().getOfflinePlayer(args[0]);
+            IPlayer t =  Server.getInstance().getOfflinePlayer(args[0]);
             if(t.hasPlayedBefore()) {
                 sender.sendMessage(TextFormat.GOLD + "WARN! This player never joined the server.");
             }

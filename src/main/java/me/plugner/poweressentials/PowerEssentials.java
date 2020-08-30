@@ -13,10 +13,10 @@ import me.plugner.poweressentials.commands.punish.UnbanCommand;
 import me.plugner.poweressentials.commands.randomic.RandomNumberCommand;
 
 public class PowerEssentials extends PluginBase {
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1-SNAPSHOT";
     @Override
     public void onEnable() {
-        String[] NukkitVersion = Nukkit.VERSION.replace("-PN", "").split(".");
+
         // 1.3.1.4-PN
 
         if(!Nukkit.API_VERSION.equals("1.0.11")) {
@@ -28,7 +28,15 @@ public class PowerEssentials extends PluginBase {
          getLogger().warning("Crashes may happens, you have been warned.");
          getLogger().warning("-------------------------------------");
         }
-
+        if(VERSION.contains("SNAPSHOT")) {
+            getLogger().warning("-------------------------------------");
+            getLogger().warning("PowerEssentials WARNING");
+            getLogger().warning("You are using a snapshot version.");
+            getLogger().warning("Latest release: 1.0.0");
+            getLogger().warning("Your Snapshot version: " + VERSION);
+            getLogger().warning("Crashes may happens, you have been warned.");
+            getLogger().warning("-------------------------------------");
+        }
         getLogger().info("Started PowerEssentials Version " + VERSION);
         ((PluginCommand<?>) getCommand("gm")).setExecutor(new me.plugner.poweressentials.GamemodeCommand());
         ((PluginCommand<?>) getCommand("tp")).setExecutor(new me.plugner.poweressentials.TeleportCommand());
