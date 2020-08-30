@@ -23,6 +23,12 @@ commands:
     aliases:
       - flyingmode
       - ibelieveicanfly
+  heal:
+    description: Heal command.
+    permission: poweressentials.heal
+    aliases:
+      - regen
+      - regenerate
   gm:
     description: Gamemode command.
     aliases:
@@ -84,4 +90,7 @@ permissions:
     default: op
   poweressentials.fly:
     description: "Allows the user to fly using /fly command."
+    default: op
+  poweressentials.heal:
+    description: "Allows to heal a user using /heal command."
     default: op

@@ -22,6 +22,7 @@ public class PowerEssentials extends PluginBase {
         ((PluginCommand<?>) getCommand("invsee")).setExecutor(new InvseeCommand());
 
         ((PluginCommand<?>) getCommand("fly")).setExecutor(new FlyCommand());
+        ((PluginCommand<?>) getCommand("heal")).setExecutor(new HealCommand());
         // You must register your listeners to capture events
         // You can make this class implement the Listener itself and invoke registerEvents(this, this)
         // But again, if the listener gets too complicated it might be better to group them in different classes
